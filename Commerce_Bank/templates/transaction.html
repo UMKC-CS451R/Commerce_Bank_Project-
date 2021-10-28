@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Bank Transactions</title>
+    <meta name="description" content="" />
+    <meta name="author" content="Tooplate" />
+    <!-- Bootstrap core CSS -->
+    <link href="{{url_for('static',filename='vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" />
+    <!-- Additional CSS Files -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet" />
+    <link rel="stylesheet" href="{{url_for('static' ,filename='assets/css/fontawesome.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static' ,filename='assets/css/tooplate-style.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/owl.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/lightbox.css')}}" />
+    <style>
+    table, th, td {
+    border: 2px solid yellow;
+    }
+    table {
+    width: 100%;
+    text-align:center;
+    }
+</style>
+  </head>
+<!--Tooplate 2116 Blugoon https://www.tooplate.com/view/2116-blugoon-->
+  <body>
+    <div id="page-wraper">
+      <!-- Sidebar Menu -->
+      <div class="responsive-nav">
+        <i class="fa fa-bars" id="menu-toggle"></i>
+        <div id="menu" class="menu">
+          <i class="fa fa-times" id="menu-close"></i>
+          <div class="container">
+            <div class="image">
+              <a href="#"><img src="{{url_for('static',filename='assets/images/Ebank.jpg')}}" alt="Blugoon by Tooplate" /></a>
+            </div>
+            <div class="author-content">
+              <h4>BANK</h4>
+              <span>Transactions</span>
+            </div>
+            <nav class="main-nav" role="navigation">
+            <ul>
+                <li><a href="/">HOME</a></li>
+
+                <li><a href="logout">LOGOUT</a></li>
+            </ul>
+            </nav>
+            <div class="social-network">
+              <ul class="soial-icons">
+</ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section class="section contact-me" data-section="section4">
+        <div class="container">
+          <div class="section-heading">
+            <div class="">
+          <a type="button" href="{{url_for('deposit',)}}" class="btn btn-secondary">Make Transaction</a>
+            </div>
+            <div class="container mt-3" >
+          {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              <ul class="flashes">
+              {% for category,message in messages %}
+                <div class="alert alert-success mb-3" role="alert">
+                {{category}} - {{ message }}
+                </div>
+              {% endfor %}
+              </ul>
+            {% endif %}
+          {% endwith %}
+          </div>
+          </div>
+            <h2>Transaction History</h2>
+<table>
+              <tr>
+                {% for i in cols%}
+                      <th>{{i}}</th>
+
+                   {% endfor %}
+              </tr>
+              {% for j in rows %}
+                  <tr>
+                    {% for i in j %}
+                        <td>{{i}}</td>
+                    {% endfor %}
+                  </tr>
+              {% endfor %}
+          </table>
+            <br>
+
+
+        </div>
+      </section>
+    </div>
+
+ <script src="{{url_for('static',filename='vendor/jquery/jquery.min.js')}}"></script>
+    <script src="{{url_for('static',filename='vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+
+    <script src="{{url_for('static',filename='assets/js/isotope.min.js')}}"></script>
+    <script src="{{url_for('static',filename='assets/js/owl-carousel.js')}}"></script>
+    <script src="{{url_for('static',filename='assets/js/lightbox.js')}}"></script>
+    <script src="{{url_for('static',filename='assets/js/custom.js')}}"></script>
+<!--    -->
+
+
+  </body>
+</html>
+
