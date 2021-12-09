@@ -5,22 +5,22 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- METADATA -->
-    <title>Commerce Bank | Banking, Checking, Savings, Mortgages &amp; More</title>
-    <meta name="description" content="Commerce Bank offers personal and business banking, checking, mortgages, loans, investing, credit cards &amp; more. Visit us online or at one of our locations." />
-    <meta name="keywords" content="" />
-    <meta property="og:title" content="Commerce Bank | Banking, Checking, Savings, Mortgages &amp; More" />
+    <title>Contact Us | Customer Service | Commerce Bank</title>
+    <meta name="description" content="Contact Commerce Bank customer service whenever you need us via phone, email or in a branch location." />
+    <meta name="keywords" content="contact, contact us, customer service, support, account services, help" />
+    <meta property="og:title" content="Contact Us | Customer Service" />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="" />
-    <meta property="og:description" content="Commerce Bank offers personal and business banking, checking, mortgages, loans, investing, credit cards &amp; more. Visit us online or at one of our locations." />
-    <meta property="og:url" content="/" />
-    <link rel="icon" href="static/-/media/cb/images/global/favicon.ico?revision=3e33187d-4bad-4881-8705-dcdd88318311&amp;modified=20181012174823" type="image/x-icon">
-    <link id="canonicalUrl" rel="canonical" href="https://www.commercebank.com" />
+    <meta property="og:description" content="Contact Commerce Bank customer service whenever you need us via phone, email or in a branch location." />
+    <meta property="og:url" content="/contactus" />
+    <link rel="icon" href="static/-/medial/cb/images/global/favicon.ico?revision=3e33187d-4bad-4881-8705-dcdd88318311&amp;modified=20181012174823" type="image/x-icon">
+    <link id="canonicalUrl" rel="canonical" href="https://www.commercebank.com/contact-us" />
     
     <link rel="stylesheet" href="static/Styles/cb.v-dliqtv4029eyc7jy5mafq.css">
     <link rel="stylesheet" href="static/Styles/cb-footer.v-ekz5fdp0vdepykg5dgigxq.css" />
     <link rel="preload" as="font" href="static/Styles/cerapro-regular-webfont.v-gcdfbgkixjaxdvnipfwl1a.woff2" type="font/woff2" crossorigina="anonymous">
     <link rel="preload" as="font" href="static/Styles/cerapro-regularitalic-webfont.v-bcwjn8yk5kpbfydnbwvvng.woff2" type="font/woff2" crossorigina="anonymous">
-    <link rel="preload" as="font" href="Styles/cerapro-medium-webfont.v-61oqyxrun0ctqvqn5jxjmq.woff2" type="font/woff2" crossorigina="anonymous">
+    <link rel="preload" as="font" href="static/Styles/cerapro-medium-webfont.v-61oqyxrun0ctqvqn5jxjmq.woff2" type="font/woff2" crossorigina="anonymous">
     <link rel="preload" as="font" href="static/Styles/cerapro-bold-webfont.v-o8qgb9cgdwqubxnbueiasa.woff2" type="font/woff2" crossorigina="anonymous">
     <link rel="preload" as="font" href="static/fonts/cb-icomoon.v-ojdvz2lnhpm91z0cyglsow.eot" type="font/embedded-opentype" crossorigina="anonymous">
     <link rel="preload" as="font" href="static/fonts/cb-icomoon.v-xgo0obbfc1cwsl8oqrggvw.svg" type="font/svg" crossorigina="anonymous">
@@ -56,8 +56,7 @@
         var CB = { config: {} };
     </script>
     
-    <!-- Bing Webmaster Meta Tag -->
-    <meta name="msvalidate.01" content="91835A2168AB3FCFEFCE921F30656639" />
+    
     <!-- GOOGLE TAG MANAGER - GTM Head -->
     <script>
         (function(w, d, s, l, i) {
@@ -88,7 +87,7 @@
             };
             CB.config.urls = {
                 locationFinder: '#',
-                brokerageServices: 'personal/invest/financial-advisor-locations'
+                brokerageServices: 'static/Assets/personal/invest/financial-advisor-locations'
             };
             
             CB.content = {
@@ -134,7 +133,7 @@
         
         
         <a href="#main" class="skip-to-main" tabindex="1">Skip To Main Content</a>
-        <div id="Body" class="content-width">
+        <div class="theme-wrapper">
             <!--MODAL-->
             <script>
                 function showLogin() {
@@ -162,9 +161,24 @@
                                     
                                     
                                     <!-- NEW login -->
-                                    <h2 class="login_welcome">Log in to Online Banking:</h2>
+                                    <h2 class="login_welcome">Log in or select an account:</h2>
                                     <label class="login_dropdown login_label_left" />
                                     <div class="login form-group login_select" style="padding: initial; margin: initial;">
+                                        <span class="account-type">Select your account type</span>
+                                        <div class="login-main">
+                                            <select id="login1Select" class="selectpicker" onchange="loginChanged('login1');">
+                                                <option value="A3F86833BD044DF68B6516A97AF10B30">Online Banking</option>
+                                                <option value="982A48C3D87C4B13917AC48B8AF24B82">Credit Cards</option>
+                                                <option value="FF57E941B11E4A61BB50FBD35D2F08E9">mySpending Card&#174;</option>
+                                                <option value="13581638AB4E4209A06511BBEDDCF060">Mortgage Loans</option>
+                                                <option value="EDA99400DC314D2CB55B3FE8AEBDE389">Health Services Financing</option>
+                                                <option value="13E2DBDD6C18400897E88986FA3C0D38">Health Payment Plan</option>
+                                                <option value="D2F87B912F564563A3276FED40319203">Commerce Trust Wealth Manager</option>
+                                                <option value="6F11D620D37A4E61B53A10CDC9717919">Brokerage Account</option>
+                                                <option value="5E7A6187F0264D86BEC7EB78428A864F">Student Loans</option>
+                                            </select>
+                                        </div>
+                                        
                                         <div class="ie-only" style="display: none;">
                                             <select id="login1SelectIE" style="width: 100% !important; max-width: 100% !important; height: 35px !important;" onchange="loginChanged('login1');">
                                                 <option value="A3F86833BD044DF68B6516A97AF10B30">Online Banking</option>
@@ -179,20 +193,14 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <form class="login1 login-content A3F86833BD044DF68B6516A97AF10B30" id="A3F86833BD044DF68B6516A97AF10B30" method="post" action="{{url_for('login')}}" style="clear:both">
+                                    <form class="login1 login-content A3F86833BD044DF68B6516A97AF10B30" id="A3F86833BD044DF68B6516A97AF10B30" method="post" action="https://banking.commercebank.com/CBI/Auth/Login" style="clear:both">
                                         <div class="form-group">
                                             <!--<label for="nav-online-banking-customer-id">Customer ID</label>-->
-                                            <input type="text" id="nav-online-banking-customer-id" class="form-control" name="custId" placeholder="Enter Customer ID" />
-                                            <input type="email" id="nav-online-banking-customer-id1" class="form-control" name="email" placeholder="Enter Customer Email" />
-                                            <input type="password" id="nav-online-banking-customer-id2" class="form-control" name="pwd" placeholder="Enter Password" />
+                                            <input type="text" id="nav-online-banking-customer-id" class="form-control" name="txtUserID" placeholder="Enter Customer ID" />
                                         </div>
                                         <button type="submit" class="btn btn-primary btn-block">Log In</button>
-                                        <br/>
-                                        <li><a href="{{url_for('forget')}}" style="margin-left: 20%;">Forget Password</a></li>
-<br>
-                                        <a href="{{url_for('reg')}}" style="margin-left: 20%;">Create New Account</a>
                                     </form>
-                                    <a class="login1 login-content btn btn-primary btn-block 982A48C3D87C4B13917AC48B8AF24B82" id="982A48C3D87C4B13917AC48B8AF24B82" href="personal/cards/card-member-access" style="clear:both">Log In</a>
+                                    <a class="login1 login-content btn btn-primary btn-block 982A48C3D87C4B13917AC48B8AF24B82" id="982A48C3D87C4B13917AC48B8AF24B82" href="static/Assets/personal/cards/card-member-access" style="clear:both">Log In</a>
                                     <a class="login1 login-content btn btn-primary btn-block FF57E941B11E4A61BB50FBD35D2F08E9" id="FF57E941B11E4A61BB50FBD35D2F08E9" href="https://www.commercebank.com/myspendingcard" style="clear:both">Log In</a>
                                     <a class="login1 login-content btn btn-primary btn-block 13581638AB4E4209A06511BBEDDCF060" id="13581638AB4E4209A06511BBEDDCF060" href="https://loansphereservicingdigital.bkiconnect.com/commerce/#/" style="clear:both">Log In</a>
                                     <a class="login1 login-content btn btn-primary btn-block EDA99400DC314D2CB55B3FE8AEBDE389" id="EDA99400DC314D2CB55B3FE8AEBDE389" href="https://banking.commercebank.com/CBI/Auth/Login" style="clear:both">Log In</a>
@@ -249,7 +257,7 @@
                             <div class="logo">
                                 <div class="all-center">
                                     <a href="/">
-                                        <img src="" class="img-responsive img-dynamic" alt="Commerce Bank, Member FDIC" data-img-url="static/-/media/cb/images/masthead/site-logo/cblogowhite00c2aa7d.svg" />
+                                        <img src="" class="img-responsive img-dynamic" alt="Commerce Bank, Member FDIC" data-img-url="static/-/medial/cb/images/masthead/site-logo/cblogowhite00c2aa7d.svg?sc=0.5&amp;revision=84c44cf4-c4cd-464b-af56-2daaa8047e21&amp;modified=20200623220845&amp;hash=3BBFD28DDC531153AA4B12518E50F6CB7ADC79FE" data-img-url-2x="static/-/medial/cb/images/masthead/site-logo/cblogowhite00c2aa7d.svg?sc=1&amp;revision=84c44cf4-c4cd-464b-af56-2daaa8047e21&amp;modified=20200623220845&amp;hash=7445B3524AFBCCD563926A56DB0884A44872E08F" />
                                         
                                     </a>
                                 </div>
@@ -273,11 +281,6 @@
                 
                 <div class="openMenu">
                     
-                    
-                    
-                    
-                    
-                    
                     <div class="tab-content card" id="myTabContentMD">
                         
                         <div class="tab-pane tab-fade tab-show active" id="personal-md" role="tabpanel" aria-labelledby="personal-tab-md">
@@ -293,142 +296,127 @@
                                 </div>
                                 <div class="dropMenu" aria-role="navigation" aria-label="Main Navigation">
                                     <ul id="megaM">
-                                           <li class="nav-item dropdown megaLink ">
-                                            <a href="{{url_for('index')}}" id="Bank1" class="nav-link  navigation-dropdown-toggle"
-                                            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Bank</a>
- <div class="dropdown-menu" aria-labelledby="Bank">
-                                                <div class="row">
-
-                                                    <div class="coll col-sm-12 col-lg-3">
-                                                        <h5>
-                                                            <a href="{{url_for('about_us')}}" class="subsection-title">About Us</a>
-                                                        </h5>
-
-                                                    </div>
+                                        <li class="nav-item">
+                                            <a href="{{url_for('about_us')}}" class="nav-link">About Us</a>
                                         </li>
-
-                                        <li class="nav-item dropdown megaLink ">
-                                            <a href="{{url_for('reg')}}" id="Bank" class="nav-link  navigation-dropdown-toggle"
-                                            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Customer</a>
-<div class="dropdown-menu" aria-labelledby="Bank">
-                                                <div class="row">
-
-                                                    <div class="coll col-sm-12 col-lg-3">
-                                                        <h5>
-                                                            <a href="{{url_for('reg')}}" class="subsection-title">Create Account</a>
-                                                        </h5>
-
-                                                    </div>
+                                        <li class="nav-item">
+                                            <a href="{{url_for('contact_us')}}" class="nav-link hover">Contact Us</a>
                                         </li>
-                                        </li>
-
-                                            </ul>
-                                            
-                                            <div class="contact">
-                                                <span class="find">
-                                                    <a href="https://locations.commercebank.com/locations/" target="">
-                                                        Find a Branch or ATM
-                                                    </a>
-                                                </span>
-                                                <span class="contactUs">
-                                                    <a href="{{url_for('contact_us')}}" target="">
-                                                        Contact Us
-                                                    </a>
-                                                </span>
-                                            </div>
-                                            
-                                            
-                                        </div>
-                                        
-                                        
-                                        
-                                        
+                                    </ul>
+                                    
+                                    <div class="contact">
+                                        <span class="find">
+                                            <a href="https://locations.commercebank.com/locations/" target="">
+                                                Find a Branch or ATM
+                                            </a>
+                                        </span>
+                                        <span class="contactUs">
+                                        <a href="{{url_for('contact_us')}}" target="_self">
+                                                Contact Us
+                                            </a>
+                                        </span>
                                     </div>
+                                    
+                                    
                                 </div>
+                                
+                                
+                                
+                                
                             </div>
                         </div>
                     </div>
-                    <!--end megamenu-->
-                    
-                    <div class="overlayBackground"></div>
-                    
-                    
-                    <div class="page-wrapper"></div>
                 </div>
+            </div>
+            <!--end megamenu-->
+            
+            <div class="overlayBackground"></div>
+            
+            <main class="main" id="main" tabindex="-1">
                 
-                <div class="main-wrapper">
-                    <main class="main" id="main" tabindex="-1">
-                        
-                        <div class="header-margin">
-                            <div class="main_welcome_wrapper">
-                                
-                                <style scoped>
-                                    /* > 1200 */
-                                    .background_wrapper {background-image: url( static/-/media/cb/images/headers/large-header/challenge-headerpersonal-full-welcome-circle.jpg?sc=1&amp;revision=ae3b2de6-0b65-4340-9e7f-da8c2eacc92e&amp;modified=20200903145324&amp;hash=90E9796C134070631F369D56A0C3EED9F54B8A8E );}
-                                    
-                                    @media (min-width: 992px) and (max-width: 1200px) {.background_wrapper {background-image: url( static/-/media/cb/images/headers/large-header/challenge-headerpersonal-homepage-welcome-tablet-bg.jpg?sc=1&amp;revision=f34db6a5-11c3-4419-9bb8-4168297cabc5&amp;modified=20200903145324&amp;hash=F153AE115335093BC887149166A566B5B6A6E9E5 );}}
-                                    
-                                    @media (min-width: 415px) and (max-width: 991px) {.background_wrapper {background-image: url( static/-/media/cb/images/headers/large-header/challenge-headerpersonal-homepage-welcome-tablet-small-bg.jpg?sc=1&amp;revision=e80a1cfd-01c1-4f20-b885-775e76d53cf1&amp;modified=20200903145325&amp;hash=6CFCD10E1974E43D8608E5804EBCC10413B3290A );}}
-                                    
-                                    @media (max-width: 414px) {.background_wrapper {background-image: url( static/-/media/cb/images/headers/large-header/challenge-headerpersonal-homepage-welcome-mobile-bg.jpg?sc=1&amp;revision=4b9a31ec-5f03-4200-aa47-cb448ce793e4&amp;modified=20200915200056&amp;hash=1272D95F8EDAC105B75C0FF3755E4966C509E274 );}}
-                                </style>
-                                   <center>{% with messages = get_flashed_messages(with_categories=true) %}
-			{% if messages %}
-				{% for category, message in messages %}
-					<div class="alert alert-{{ category }}">
-						{{ message }} {{ msg }}
-					</div>
-				{% endfor %}
-			{% endif %}
-		{% endwith %}
+                <div class="main-inner">
 
-		{% block content %} {% endblock %}
- </center>
-                                <div class="background_wrapper">
-                                    <span class="inner"></span>
-                                    <div class="welcome_wrapper">
-                                        <div class="page-heading page-dropdown">
-                                            <div class="main-inner">
-                                                <div class="page-heading-inner content coll col-md-12 col-lg-6">
-                                                    <h1>How can we help?</h1>
-                                                    <p>I'm looking for</p>
-                                                    <div class="inline-block-group btn-group">
-                                                        <button type="button" class="dropdown-toggle" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
-                                                            select a topic
-                                                        </button>
-                                                        
-                                                        <ul class="inline-block-group dropdown-menu">
-                                                            <li><a href="{{url_for('reg')}}">Create Account</a></li>
-                                                            <li><a href="{{url_for('contact_us')}}">Contact Details</a></li>
+                    <div class="header header-small header-with-graphic  header-highlight-blue img-dynamic" data-img-url="static/-/media/cb/images/headers/small-header/small-header-graphic-2x-01.jpg"
+                    data-img-url-mobile="static/-/medial/cb/images/headers/small-header/small-header-graphic-2x-01.jpg">
+                    <span class="sr-only">circles on a green background</span>
+                    <div class="header-inner">
+                        <div class="header-content">
+                            <h1 class="sr-only">Commerce Bank Customer Service</h1>
+                            <h2 class="h2">
+                                Contact Commerce
 
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                
-                                                <div id="bannerLogin" class="login_wrapper coll col-md-12 col-lg-6">
-                                                </div>
-                                                <script>
-                                                    var bigLogin = document.getElementById("bannerLogin");
-                                                    var modal = document.getElementsByClassName("login_section");
-                                                    
-                                                    if (bigLogin && bigLogin.innerHTML.trim() === "" && modal.length > 0) {
-                                                        bigLogin.innerHTML = modal[0].innerHTML.replace(/login1/g, 'login2');
-                                                    }
-                                                </script>
-                                                <!--/.login_wrapper-->
-                                            </div>
-                                            
-                                            <div class="clearfix"></div>
-                                        </div>
-                                    </div>
-                                    <!--/.welcome-wrapper-->
-                                </div>
-                                <!--/.background-wrapper-->
-                            </div>
-                            <!--./main_welcome_wrapper--> 
-                        </main>
+                            </h2>
+
+                        </div>
                     </div>
-                       <!--new footer begins-->
+
+                </div>
+                <ul class="breadcrumbV2">
+                    <li><a href="/">Home</a></li>
+                    <li>Contact Us</li>
+                </ul>
+                
+                    <div class="main-inner">
+                <div class="text-box">
+Commerce Bank serves customers in Missouri, Kansas, Illinois, Oklahoma, and Colorado. All branches will be closed on federal holidays. View our <a href="/contact-us/holiday-schedule">holiday schedule</a>.<br>
+<br>
+<strong>Note: All times given in Central Time.</strong></div><div class="basic-content basic-content--shaded">
+        <h3>General Questions</h3>
+                <div class="row">
+<div class="col-sm-6">
+    <div class="contact-item">
+                <h4>24-Hour Account Information Line</h4>
+                <a href="tel:800-453-2265" aria-label="24-Hour Account Information Line Phone Number"><p class="phone">800-453-2265</p></a>
+            <p></p><ul class="list-unstyled">
+    <li><span class="icon-btn-location"></span>
+    <a href="https://locations.commercebank.com/locations/">Branch Locator</a></li>
+    <li><span class="icon-social-mail"></span>
+    <a href="mailto:mymoney@commercebank.com">Email Us</a><sup>1</sup></li>
+    <li><span class="icon-info"></span>
+    <a href="/contact-us/24-hour-account-information">More Info</a></li>
+</ul><p></p>
+    </div>
+</div><div class="col-sm-6">
+    <div class="contact-item">
+                <h4>Speak With A Customer Service Representative</h4>
+                <a href="tel:855-659-1656" aria-label="Speak With A Customer Service Representative Phone Number"><p class="phone">855-659-1656</p></a>
+            <p></p><table>
+    <tbody>
+        <tr>
+            <td>Mon-Fri</td>
+            <td>8:00 a.m. - 8:00 p.m.</td>
+        </tr>
+        <tr>
+            <td>Sat</td>
+            <td>8:00 a.m. - 4:00 p.m.</td>
+        </tr>
+    </tbody>
+</table><p></p>
+    </div>
+</div>            </div>
+            <div class="row">
+<div class="col-sm-6">
+    <div class="contact-item">
+                <h4>Log in to <a href="{{url_for('index')}}" target="_blank">Online Banking</a> <!--- or the Commerce Bank Mobile App---> to chat with a Customer Care Center Associate.</h4>
+            <p></p><table>
+    <tbody>
+        <tr>
+            <td>Mon-Fri</td>
+            <td>8:00 a.m. - 8:00 p.m.</td>
+        </tr>
+        <tr>
+            <td>Sat</td>
+            <td>8:00 a.m. - 4:00 p.m.</td>
+        </tr>
+    </tbody>
+</table><p></p>
+    </div>
+</div>
+            </div></div></div>
+        </main>
+        
+        
+        <!--new footer begins-->
         <div class="footer_wrapper">
             <div class="footer">
                 <div class="main_footer">
@@ -440,7 +428,7 @@
                                     <a href="{{url_for('about_us')}}" target="_self">
                                         About Us Overview
                                     </a>
-
+                                    
                                 </li>
 
                             </ul>
@@ -457,13 +445,13 @@
                                     <li>
                                         <a href="{{url_for('reg')}}" target="_self">
                                     Create Account                                        </a>
-
+                                        
                                     </li>
 
                                 </ul>
                             </div>
                         </div>
-
+                        
                     </div>
                     <div class="footer_security">
                         <div class="footer-list_wrapper footer-list_collapse">
@@ -477,13 +465,13 @@
                                         <a href="{{url_for('forget')}}" target="_self">
                                             Forget Password
                                         </a>
-
+                                        
                                     </li>
 
                                 </ul>
                             </div>
                         </div>
-
+                        
                     </div>
                     <div class="footer_links">
                         <div class="footer-list_wrapper footer-list_collapse">
@@ -497,20 +485,20 @@
                                         <a href="{{url_for('contact_us')}}" target="_self">
                                             Contact Us
                                         </a>
-
+                                        
                                     </li>
 
                                 </ul>
                             </div>
                         </div>
-
+                        
                     </div>
                 </div>
                 <div class="secondary_footer clearfix">
                     <div class="secondary_footer1">
                         <div class="footer_ca">
                             <p><a href="{{url_for('about_us')}}"><img height="285" alt="Challenge Accepted - Commerce Bank logo" width="1077" src="static/-/media/cb/images/global/2018-cb-ca-white.png?la=en&revision=218baa5e-1f6f-4805-af51-e57894706b0c&modified=20200309150456&hash=11128B46BEC53F2E145BF06E72448649865E5E4B" /></a></p>
-
+                            
                         </div>
                         <div class="footer_social">
                             <div class="social-links">
@@ -558,7 +546,7 @@
                                                         <p>Never share your personal information on Instagram.</p></div>
                                                     </div>
                                                 </div>
-                                                <a href="/about-us" target="_self"><span class="icon-cb-globe"></span><span class="sr-only">Globe Link and Icon</span></a>
+                                                <a href="#" target="_self"><span class="icon-cb-globe"></span><span class="sr-only">Globe Link and Icon</span></a>
                                             </div>
                                         </div>
                                     </div>
@@ -566,10 +554,10 @@
 
                         </div>
                         <!--new footer ends-->
-
+                        
                     </div>
-
-
+                    
+                    
                     <!-- Modal for External Link Disclaimer Pop-up -->
                     <div class="modal fade link-external-modal" id="linkExternal" tabindex="-1" role="dialog" aria-labelledby="leaveCommerceBank">
                         <div class="modal-dialog" role="document">
@@ -586,10 +574,10 @@
                                 </div>
                             </div>
                         </div>
-
+                        
                     </div>
-
-
+                    
+                    
                     <!-- Required for navigation -->
                     <script defer src="static/Scripts/navigation/main.v-nboy1prfgl6jtcqkpapyw.js"></script>
                     <!-- END -->
@@ -605,6 +593,6 @@
                             <span id="open-linkedin-link">Opens LinkedIn Site. </span>
                         </div>
                     </body>
-
-
+                    
+                    
                     </html>
