@@ -1,0 +1,180 @@
+/*added from cb.css no need to repeat; just local*/
+@font-face {
+  font-family: 'cbfont-icomoon';
+  src: local('cbfont-icomoon'), url('../Assets/fonts/cb-icomoon.eot?8qhm04');
+  src: local('cbfont-icomoon'), url('../Assets/fonts/cb-icomoon.eot?8qhm04#iefix') format('embedded-opentype'),
+    url('../Assets/fonts/cb-icomoon.ttf?8qhm04') format('truetype'),
+    url('../Assets/fonts/cb-icomoon.woff?8qhm04') format('woff'),
+    url('../Assets/fonts/cb-icomoon.svg?8qhm04#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'cbfont-icomoon';
+  src: local('cbfont-icomoon'), src:  url('../Assets/fonts/cb-icomoon.eot?ff4ttd');
+  src: local('cbfont-icomoon'), src:  url('../Assets/fonts/cb-icomoon.eot?ff4ttd#iefix') format('embedded-opentype'),
+    url('../Assets/fonts/cb-icomoon.ttf?ff4ttd') format('truetype'),
+    url('../Assets/fonts/cb-icomoon.woff?ff4ttd') format('woff'),
+    url('../Assets/fonts/cb-icomoon.svg?ff4ttd#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/*end addition*/
+
+.workday-module {
+	width: 100%;
+	margin: 35px 0 45px;
+}
+
+.workday-module a {
+	color: #006747;
+	text-decoration: none;
+	border-bottom: 1px solid #006747;
+}
+
+.workday-module a:hover,
+.workday-module a:focus {
+	color: #006747;
+	padding-bottom: 4px;
+    transition: padding 0.4s ease;
+}
+
+.workday-module .wd-header {
+	font-weight: bold;
+	margin: 30px 0 0;
+}
+
+.workday-module .row {
+	padding: 15px 0;
+	border-bottom: 1px solid #eee;
+}
+
+.workday-module .row .no-segments {
+	padding-bottom: 30px;
+	text-align: center;
+}
+
+.workday-module .row:nth-last-child(2) {
+	padding: 15px 0;
+	border-bottom: none;
+}
+
+.workday-module .title {
+	color: #006747;
+	font-weight: bold;
+}
+
+.workday-module h1,
+.workday-module h2,
+.workday-module h3,
+.workday-module h4,
+.workday-module h5,
+.workday-module h6 {
+	text-align: center;
+}
+
+.workday-module .wd-jobs-container {
+	margin-top: 30px;	
+	text-align: center;
+}
+
+.workday-module .wd-more-jobs {
+	background: #006747;
+	color: #fff !important;
+	display: inline-block;
+	font-size: 17px;
+	min-width: 300px;
+	padding: 8px 20px 10px;
+	text-align: center;	
+}
+
+.workday-module .wd-more-jobs span {	
+    font-size: 1.5em;
+	text-align: center;
+	position: relative;
+	top: 3px;
+	left: 10px;
+	font-variant: normal;	
+	margin: 0;
+	padding: 0;
+	text-transform: none;  
+	border: none;
+	
+}
+
+@media (min-width: 769px) {
+    .col-sm-1.job_type {
+        width: 8.33333%; /* on 7-column tables */
+    }
+    .col-sm-2.job_type {
+        width: 16.66667%; /* on 6-column tables */
+    }
+    .col-sm-3.job_title {
+        width: 25%; /* on 7-column tables */
+    }
+    .col-sm-4.job_title {
+        width: 33.33333%; /* on 6-column tables */
+    }
+    .col-sm-5.job_title {
+        width: 41.66667%; /* on 5-column tables */
+    }
+}
+
+@media (max-width: 769px) {	
+	.workday-module {
+		width: 100%;
+		margin: 35px 0 0;
+	}
+
+    .workday-module .wd-jobs-container {
+        margin-bottom: 30px;
+    }
+	
+  	.workday-module .wd-header {
+    	display: none;
+  	}
+	
+	.workday-module .col-sm-2,
+	.workday-module .col-sm-3 {
+		flex: 1 !important;
+    	max-width: 100% !important;
+		width: 100% !important;	
+	}
+	
+	.workday-module .title, .workday-module .job_id {
+		font-size: 18px;
+		line-height: 1.25em;
+		margin-bottom: 0.125em;
+	}
+	
+	.workday-module h1,
+	.workday-module h2,
+	.workday-module h3,
+	.workday-module h4,
+	.workday-module h5,
+	.workday-module h6 {
+		font-size: 28px;
+		font-weight: bold;
+	}	
+}
+
+@media (max-width: 300px) {
+	.workday-module .wd-more-jobs {
+		min-width: 200px;
+	}
+}
+
+.workday-module .wd-more-jobs:focus,
+.workday-module .wd-more-jobs:hover {
+	background: black;
+}
+
+.workday-module .wd-more-jobs a,
+.workday-module .wd-more-jobs a:focus,
+.workday-module .wd-more-jobs a:hover {
+	color: #fff !important;
+	border-bottom: none;
+	text-decoration: none;
+}
+

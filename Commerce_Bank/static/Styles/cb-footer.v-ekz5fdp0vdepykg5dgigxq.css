@@ -1,0 +1,426 @@
+/* new footer */
+
+body {
+	margin: 0;
+	/*height: 100vh;*/
+}
+
+/* Added Globe Font | remove this declaration once added to cb.css */
+@font-face {
+  font-family: 'cbfont-icomoon';
+  src: local('cbfont-icomoon'), url('../fonts/cb-icomoon.eot?8qhm04');
+  src: local('cbfont-icomoon'), url('../fonts/cb-icomoon.eot?8qhm04#iefix') format('embedded-opentype'),
+    url('../fonts/cb-icomoon.ttf?8qhm04') format('truetype'),
+    url('../fonts/cb-icomoon.woff?8qhm04') format('woff'),
+    url('../fonts/cb-icomoon.svg?8qhm04#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+/* Remove this declaration once cbfont-icomoon is added to cb.css */
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'cbfont-icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* End Added Font */
+
+
+.footer_wrapper {
+	color: #fff;
+	background: #006747;
+	margin-bottom: -35px; orce removal of bottom space below footer*/
+}
+
+.footer {	
+	margin: 0 auto;			
+	max-width: 1497px;
+	display: flex;
+	padding: 10px 0 20px;
+}
+
+	@media (max-width: 1024px) {
+		.footer {
+			display: block;
+			width: 100%;
+			margin: 0;
+		}
+	}
+	
+		.footer a {
+			color: #fff;
+			border-bottom: 1px solid #fff;
+		}
+		
+		.footer a:hover, .footer a:focus {
+			color: #fff;
+			border-bottom: 1px solid #fff;
+			padding-bottom: 4px;
+			transition: padding 0.4s ease;
+		}
+
+	.clearfix:after{
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+	
+.secondary_footer {
+    display: flex;	
+    flex-direction: column;	
+    order: -1;
+    width: 25%;
+    padding: 15px 20px 0;
+}	
+
+	@media (max-width: 1024px) {
+		.secondary_footer {
+			display: block;
+			width: 100%;
+			padding: 10px 0;
+			}		
+		}	
+
+.secondary_footer2 {
+	font-size: 15px;
+}
+
+	.secondary_footer2 ul {
+		list-style-type: none;
+	}
+
+	.secondary_footer2 p {
+		font-size: 15px;
+	}
+	
+/* tablet */
+@media (min-width: 515px) and (max-width: 1024px) {
+	.secondary_footer1 {
+		float: left;
+		width: 50%;
+		margin: 0;		
+		padding: 0 20px;
+	}
+
+	.secondary_footer2 {
+		float: right;
+		width: 50%;
+		margin: 0;		
+		padding: 0 20px;
+	}
+}
+
+/* phone */
+@media (max-width: 514px) {
+	.secondary_footer1, .secondary_footer2 {
+		width: 90%;		/*keep footer from hitting margin*/
+		float: none;
+		margin: 0 auto;
+		padding-bottom: 15px;
+	}
+	
+	.secondary_footer1 {
+		margin-top: 20px;
+	}
+	
+	.secondary_footer2 {
+		margin-top: -20px;
+	}
+}
+
+.footer_ca, .footer_social, .social-links, .footer_secondary_links, .footer_ehl {
+	text-align: center;
+}
+
+.footer_secondary_links {
+	margin-top: 30px;
+}
+
+	/* tablet */
+	@media (min-width: 515px) and (max-width: 1024px) {
+		.footer_secondary_links , .footer_ehl {
+			text-align: left;
+		}
+
+		.footer_secondary_links  {
+			margin-top: 10px;
+		}
+	}
+	
+.footer_wrapper .copyright {
+	margin: 0 auto;
+	padding: 0 15px 20px;
+	text-align: center;
+}
+
+.footer_ca img {
+	margin-top: 5px;
+	max-width: 270px;
+	height: auto !important;
+}
+
+.footer_ca a, .footer_ca a:hover , .footer_ca a:focus {
+	border-bottom: none;
+}
+
+	@media (max-width: 1201px) {
+		.footer_ca img {
+			max-width: 270px;
+			height: auto;
+		}
+	}
+
+	@media (min-width: 1025px) and (max-width: 1200px) {
+		.footer_ca img {
+			max-width: 225px;
+			height: auto;
+		}
+	}
+
+	@media (min-width: 768px) and (max-width: 1024px) {
+		.footer_ca img {
+			max-width: 270px;
+			height: auto;
+		}
+	}
+	
+	@media (min-width: 515px) and (max-width: 595px) {
+		.footer_ca img {
+			max-width: 250px;
+			height: auto;
+		}
+	}
+
+.footer_ehl img {
+	margin: 30px 0 15px;
+	max-width: 150px;
+	height: auto;
+}
+	
+	.main_footer {
+		display: flex;	
+		justify-content: space-between;	
+		width: 70%;
+		margin-left: 10px;
+	}
+	
+	/* tablet */
+	@media (min-width: 515px) and (max-width: 1024px) {
+		.main_footer {
+			display: flex;
+			justify-content: space-between;
+			width: 100%;
+			padding: 0 20px;
+			margin: 0;
+		}
+	}	
+
+	/* phone */
+	@media (max-width: 514px) {
+		.main_footer {
+			display: block;	
+			width: 100%;
+			padding: 0 20px;
+			margin: 0;
+		}		
+	}
+
+.footer-list_links {
+	list-style: none;
+}		
+
+.footer_social .social-links {
+	padding: 0;
+	margin: 30px 0 15px;
+}
+
+		.footer_social .social-links {
+			margin-left: auto;
+			margin-right: auto;
+		}
+		
+		.footer_social .social-links:first-child {
+			margin-left: 12px !important;
+		}
+		
+			@media (max-width: 514px) {
+				.footer_social .social-links:first-child {
+					margin-left: 0 !important;
+				}
+			}
+
+		.footer_social .social-links a {
+			height: 45px;
+			width: 45px;
+			font-size: 24px;
+			padding-top: 7px;
+		}		
+						
+		.footer_social .social-links a {
+			margin-right: 5px;
+		}		
+		.footer_social .social-links a:last-child {
+			margin-right: 0 !important;
+		}
+	
+			@media (min-width: 1026px) and (max-width: 1288px),
+			(min-width: 601px) and (max-width: 649px) {
+				.footer_social .social-links a {
+					font-size: 18px;
+					height: 35px;
+					width: 35px;
+				}
+			}
+
+			@media (min-width: 1025px) and (max-width: 1068px),
+			(min-width: 515px) and (max-width: 600px) {
+				.footer_social .social-links a {
+					font-size: 13px;
+					height: 28px;
+					width: 28px;
+				}
+			}	
+				
+			@media (max-width: 618px) {
+				.footer_social .social-links {
+					margin-left: auto;
+					margin-right: auto;
+				}		
+				.footer_social .social-links a {
+					margin-right: 10px;
+				}	
+				.footer_social .social-links a:last-child {
+					margin-right: 0 !important;
+				}
+			}
+
+.footer_about, .footer_careers, .footer_security {
+	width: 22%;
+	margin-bottom: 10px;
+}
+
+.footer_links {
+	width: 22%;
+	margin-bottom: 0;
+}
+
+	/* tablet */
+	@media (min-width: 515px) and (max-width: 1024px) {
+		.footer_about, .footer_careers, .footer_security, .footer_links {	
+			width: 20%;
+			padding: 0 10px;
+			margin-bottom: 0;
+		}		
+	}
+
+	/* phone */
+	@media (max-width: 514px) {
+		.footer_about, .footer_careers, .footer_security, .footer_links {	
+			width: 95%;
+			padding: 0 0 0 10px;
+			margin-bottom: 0;
+		}		
+	}
+
+.footer_title {
+	color: #fff;
+	line-height: 1.5;
+	border-bottom: 4px solid #78be20;
+	margin: 0;
+	padding: 10px 0 10px 20px;			
+}
+
+.footer-list_links {
+	color: #fff;
+}
+
+/* Fix weird padding for social icons in footer */
+
+.social-links a,
+.social-links a:hover, 
+.social-links a:focus {
+	border: none;
+}
+
+/* Copied from new CB.css file
+   Appears that American Eagle added it in after site release issues in October 2019
+ */
+
+.footer-list_collapse h4.footer-list_title {
+    display: none;
+}
+
+h4.footer-list_title {
+	color: #fff;
+	line-height: 1.5;			
+}
+
+	@media (min-width: 911px) and (max-width: 1024px) {
+		h4.footer-list_title {
+			min-height: 110px;
+		}
+	}
+	
+	@media (min-width: 515px) and (max-width: 910px) {
+		h4.footer-list_title {
+			min-height: 75px;
+		}
+	}
+	
+	@media (min-width: 761px) and (max-width: 768px) {
+		h4.footer-list_title {
+			min-height: 0;
+		}
+	}
+
+    .footer-list_wrapper > button {
+        width: 100%;
+        background: transparent;
+        border: 0;
+        text-align: left;
+    }
+
+	/* tablet */
+	@media (min-width: 515px) {
+		.footer-list_collapse .collapse {
+			display: block;
+		}
+	}
+
+.footer-list_collapse > a {
+    color: #ffffff;
+}
+
+	/* tablet */
+	@media (min-width: 516px) {
+		.footer-list_collapse > a {
+			cursor: default;
+		}
+	}
+	
+	/* tablet | updated min width from 768px */
+	@media (min-width: 515px) {
+		.footer-list_collapse h4.footer-list_title,
+		 h4.footer-list_title {
+			display: block;
+			line-height: 1.5;
+		}
+		.footer-list_wrapper {
+			border: none;
+			padding: 0;
+		}
+        .footer-list_wrapper > button {
+            display: none;
+        }
+	}

@@ -1,0 +1,542 @@
+/*********************
+WEB FONTS LOCAL OVERRIDE | NO NEED TO RE-COPY THIS PART
+*********************/
+
+@font-face {
+    font-family: 'cera_probold';
+    src: url("cerapro-bold-webfont.woff2") format("woff2"), url("https://www.commercebank.com/Assets/fonts/cerapro-bold-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'cera_promedium';
+    src: url("cerapro-medium-webfont.woff2") format("woff2"), url("https://www.commercebank.com/Assets/fonts/cerapro-medium-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'cera_proregular';
+    src: url("cerapro-regular-webfont.woff2") format("woff2"), url("https://www.commercebank.com/Assets/fonts/cerapro-regular-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'cera_proitalic';
+    src: url("cerapro-regularitalic-webfont.woff2") format("woff2"), url("https://www.commercebank.com/Assets/fonts/cerapro-regularitalic-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon', 'cbfont-icomoon' !important; /* Added cbfont-icomoon for Globe and Instagram on 1/9/19 */
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-btn-dropdown:before {
+    content: "\e904";
+}
+
+/**************************
+Pagination update in cb.css (line 16574)
+***************************/
+
+@media screen and (max-width: 375px) {
+	.pagination > li:last-child {
+		float: none;
+		clear: both;
+		display: block;
+		margin-top: -20px;
+		text-align: right;
+	}
+}
+
+/**************************
+Credit Card Ratings Header
+***************************/
+
+.cc-ratings-card__Container:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+.cc-ratings-card-image {
+	float: left; 
+	padding-right: 30px;
+	min-height: 200px; 
+	min-width: 325px;
+}
+
+.cc-ratings-card-rating {
+	display: inline;
+	margin-bottom: 15px;
+}
+
+.cc-overall-rating {
+	display: inline;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+.cc-total-reviews {
+	display: inline;
+}
+
+.cc-ratings-card-text {
+	color: #615d59;
+	font-size: 2.5rem; 
+	line-height: 1.25; 
+	margin: 20px 0 15px;
+}
+
+.cc-ratings-card__Content {
+	display: table;
+}
+
+.cc-ratings-card__Columns {
+	display: table-cell; 
+}
+
+.cc-ratings-card__Columns .cc-ratings-credit__Container {
+	bottom: 15px;
+	display: inline;
+    position: relative;
+    vertical-align: middle;
+}
+		
+.cc-ratings-card__Columns .cc-ratings-credit__Container .credit-score-icon,
+.cc-ratings-card__Columns .cc-ratings-credit__Container .credit-score-text {
+	margin-top: 35px;
+	padding-bottom: 0;
+}
+
+.cc-review-title {
+	color: #77726D;
+	line-height: 1.5;
+	margin: 10px 0 -13px; /*25px 0 -13px*/
+} 
+
+.cc-review-title::before,
+.cc-review-title::after {
+	display: table;
+	content: "";
+	clear: both;
+}
+
+	@media screen and (max-width: 1024px) {
+		.cc-ratings-card-text:after {
+			content: "";
+			display: block;
+			clear: right;
+			margin-bottom: 30px;
+		}
+		.cc-ratings-card__Columns .cc-ratings-credit__Container {
+			display: block;
+			top: 0px;
+		}	
+
+		.cc-ratings-card__Columns .cc-ratings-credit__Container .credit-score-icon,
+		.cc-ratings-card__Columns .cc-ratings-credit__Container .credit-score-text {
+			display: inline-block;
+			padding-bottom: 0;
+		}
+	}
+	
+	@media screen and (min-width: 769px) and (max-width: 1024px) {
+		.cc-ratings-card__Columns .cc-ratings-credit__Container {
+			margin-top: -10px;
+		}
+	}	
+	
+	@media screen and (min-width: 769px) and (max-width: 890px) {			
+		.cc-ratings-card__Container .cc-ratings-card-rating img {
+			display: block;
+		}
+	}
+	
+	@media screen and (max-width: 768px) {			
+		.cc-ratings-card__Container .cc-ratings-card-image {
+			display: block;
+			float: none;
+			text-align: center;
+		}
+		.cc-ratings-card__Container .cc-ratings-card-image img {
+			display: inline-block;
+			text-align: center;
+		}		
+		.cc-ratings-card__Container .cc-ratings-card-rating {
+			display: block;
+			margin-top: 20px;
+			text-align: center;
+		}		
+		.cc-ratings-card__Columns .cc-ratings-credit__Container .credit-score-icon,
+		.cc-ratings-card__Columns .cc-ratings-credit__Container .credit-score-text {
+			margin-top: 0;
+			padding-bottom: 0;
+		}
+		.cc-ratings-card__Columns .cc-ratings-credit__Container .credit-score-text {
+			height: auto;
+			position: relative;
+			top: 5px;
+		}
+	}
+
+	@media screen and (max-width: 567px) {
+		.cc-ratings__Content .cc-review-date {
+			display: block;
+			padding: 0;
+		}		
+		.cc-ratings__Content .cc-review-date::after {
+			content: '';
+			display: table;
+			clear: both;
+		}
+	}
+
+	@media screen and (max-width: 480px) {		
+		.cc-ratings-card__Columns .cc-ratings-credit__Container .credit-score-text {
+			height: auto;
+			position: relative;
+		}	
+		.cc-ratings-card__Container .cc-ratings-card-rating img {
+			display: block;
+			margin: 0 auto;
+			text-align: center;
+		}		
+		.cc-overall-rating,
+		.cc-total-reviews {
+			display: inline;	
+		}	
+	}
+	
+	@media screen and (max-width: 350px) {
+		.cc-ratings-card-image {
+			float:none;
+			padding-right: 0;
+			min-height: auto;
+			min-width: auto;
+		}
+	}
+
+
+/**********************
+Credit Card Reviews
+**********************/
+
+.cc-ratings__Container {
+    width: 100%;
+    display: table;
+    margin: 0 auto;
+}
+
+.cc-featured-ratings__Container {
+	border: 4px solid #007EA8;
+	background: #f9f8f6;	
+}
+
+.cc-featured-ratings-title__Container {
+	padding: 25px 25px 10px 20px;
+}	
+
+	.cc-featured-ratings-title__Container h1, 
+	.cc-featured-ratings-title__Container h2,
+	.cc-featured-ratings-title__Container h3,
+	.cc-featured-ratings-title__Container h4,
+	.cc-featured-ratings-title__Container h5,
+	.cc-featured-ratings-title__Container h6,
+	.cc-featured-ratings-title__Container p {
+		padding: 0;
+		margin: 0;
+	}
+
+	.cc-featured-ratings-title__Container h3,
+	.cc-featured {
+		color: #007EA8;
+	}
+	
+	@media screen and (max-width: 414px) {
+		.cc-featured-ratings-title__Container h3 {
+			font-size: 2.5rem;
+		}
+	}
+		
+.cc-featured-ratings__bg {
+	background: #f9f8f6;
+}
+	
+.cc-standard-ratings__Container {
+	border-bottom: 3px solid #78be20;	
+}
+
+.cc-ratings__Content {
+	padding: 25px 30px 20px 30px;
+}
+
+.cc-featured-ratings__Container .cc-ratings__Content {
+	padding: 10px 30px 20px 30px;
+}
+
+	.cc-ratings__Content .location {
+		float: left;
+		font-size: 1.7rem;
+	}
+
+.cc-blockquote {
+	font-size: 18px;
+	border-left: none;
+	margin: 0;
+	padding: 0px 70px 0 0;
+}	
+
+blockquote.cc-quotes{
+	quotes: "â€œ" "â€" "â€˜" "â€™";
+}
+
+blockquote.cc-blockquote.cc-quotes div {
+	clear: both;
+	margin: 0 0 20px 60px; /*0 0 20px 70px;*/
+}
+
+	.cc-quotes:before {
+		content: open-quote;
+		display: inline;
+		font-family: 'IM Fell Great Primer', serif;
+		font-weight: bold;	
+		font-size: 7rem; /*10rem*/
+		line-height: 0;
+		height: 0;
+		position: relative;
+		top: 55px;/*70px*/
+	}
+	.cc-quotes::after {
+		content: close-quote;
+		display: inline;
+		font-family: 'IM Fell Great Primer', serif;
+		font-weight: bold;	
+		font-size: 7rem;/*10rem*/
+		line-height: 0;
+		height: 0;
+		position: relative;
+		bottom: -60px;
+		right: -90px;
+		float: right;
+	}
+
+.cc-featured-ratings__Container .cc-quotes::before,
+.cc-featured-ratings__Container .cc-quotes::after {
+	color: #007EA8;
+}
+
+.cc-standard-ratings__Container .cc-quotes::before,
+.cc-standard-ratings__Container .cc-quotes::after {
+	color: #615c59;
+}
+	
+	@media screen and (max-width: 768px) {
+		blockquote.cc-blockquote {
+			padding: 0 20px 0 0;
+		}
+		blockquote.cc-blockquote.cc-quotes::before {
+			font-size: 7rem;   /*8rem*/
+			top: 60px;
+		}
+		blockquote.cc-blockquote.cc-quotes::after {
+			font-size: 7rem; /*8rem*/
+			right: -30px;
+            padding-top: 10px;
+		}
+		blockquote.cc-blockquote.cc-quotes div {
+			margin: 0 0 10px 60px;   /*0 0 20px 60px*/
+		}
+	}
+	
+	@media screen and (max-width: 567px) {
+		blockquote.cc-blockquote {
+			padding: 0 0 0 0;
+		}
+		blockquote.cc-blockquote.cc-quotes::after {
+			bottom: -60px;
+			right: 0;
+		}
+	}
+	
+	@media screen and (max-width: 480px) {
+		blockquote.cc-blockquote.cc-quotes::after {
+			bottom: -20px;
+		}	
+	}
+
+	@media screen and (max-width: 350px) {
+		blockquote.cc-blockquote.cc-quotes::after {
+			bottom: 0px;
+			right: -20px;
+		}
+	}
+
+.cc-stars {
+	padding-right: 8px;
+	position: relative;
+	display: inline;
+}
+
+.cc-stars:after {
+	content: '';
+	height: 105%; /*140%*/
+	width: 2px;
+	position: absolute;
+	right: -2px;
+	top: 0; 
+	background-color: #c7c9ca;
+}
+
+	@media screen and (max-width: 567px) {
+		.cc-stars:after {
+			height: 0;
+		}
+	}
+
+.cc-review-date {
+	padding-left: 10px;
+	font-size: 1.7rem;
+	display: inline;
+}
+
+.cc-reviewer {
+    margin: 10px 20px 8px 0; /*10px 0 8px 60px*/ /*0 0 8px 60px*/
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.alignquote {
+    margin-left: 60px!important;
+}
+
+
+	.cc-reviewer:before {
+		content: "\2014";
+		font-weight: bold;
+		margin-right: 5px;
+	}
+
+.cc-ratings__Content .location, 
+.cc-ratings__Content span.location,
+.cc-member-since-date {
+	clear: both;
+	content: '';
+	display: block;
+	float: left;
+	font-size: 1.5rem;
+	padding-left: 0px;     /*60px*/ 
+}	
+
+.cc-ratings__Content .location, 
+.cc-ratings__Content span.location {
+	padding-top: 11px;
+}
+
+.cc-member-since-date {
+	padding-bottom: 30px;
+}
+
+/* .fa-star (full star) | .fa-star-half-o (half-full star) | .fa-star-o (empty star) */
+.cc-featured .fa-star,
+.cc-featured .fa-star-half-o,
+.cc-featured .fa-star-o {
+	color: #007EA8;
+}
+
+/* Standard Stars (green) */
+.fa-star,
+.fa-star-half-o,
+.fa-star-o {
+	color: #78be20;
+}
+
+.cc-ratings-answer  {
+    margin-top: -40px;
+}
+
+/***********************
+SORT BY DROP-DOWN SECTION
+***********************/
+
+#cc-sort-ratings {
+	border-top: 1px solid #ccc;
+	display: block;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+#cc-sort-ratings .cc-ratings-sort-by {
+	font-size: 1.75rem;
+	margin: 20px 0 5px;
+}
+
+#cc-sort-ratings button {						/*pulling class from Bootstrap*/
+	background-color: #c7c0b9 !important;
+	border-radius: 10px !important;	
+	color: #000 !important;
+	display: table;
+	font-size: 1.75rem;
+	font-family: 'cera_promedium' !important;
+	height: 60px;
+	padding-left: 19px;
+	vertical-align: middle;	
+}
+
+#cc-sort-ratings button:hover,
+#cc-sort-ratings button:focus,
+#cc-sort-ratings .open > button {
+	background-color: #615c59 !important;
+	border-radius: 10px 10px 0 0 !important;
+	color: #fff !important;
+}
+
+#cc-sort-ratings .dropdown-menu.open {			/*pulling class from Bootstrap*/
+	padding: 0;
+	margin: 0;
+}
+
+#cc-sort-ratings .dropdown-menu.inner {			/*pulling class from Bootstrap*/
+	background-color: #f9f8f6 !important;
+}
+
+#cc-sort-ratings .bootstrap-select.btn-group .dropdown-menu li {
+    position: relative;
+    border-bottom: 1px solid #b8b8b8;
+}
+
+#cc-sort-ratings .form-control {				/*pulling class from Bootstrap*/
+	box-shadow: none;
+	height: auto !important;
+}
+
+.custom-options {
+	display: block !important;
+	font-size: 1.7rem !important;
+	font-family: 'cera_promedium' !important;
+	height: 50px !important;
+	padding-top: 12px !important;
+	width: 100%;
+}
+
+.custom-options:hover,
+.custom-options:focus {
+	background-color: #909496 !important;
+	color: #fff !important;
+}
+
+.custom-options:last-child {
+	border-bottom: none !important;
+}

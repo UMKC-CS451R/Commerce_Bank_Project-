@@ -1,0 +1,1125 @@
+/*********************
+WEB FONTS LOCAL OVERRIDE
+*********************/
+
+@font-face {
+    font-family: 'cera_probold';
+    src: url("cerapro-bold-webfont.woff2") format("woff2"), url("https://www.commercebank.com/Assets/fonts/cerapro-bold-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'cera_promedium';
+    src: url("cerapro-medium-webfont.woff2") format("woff2"), url("https://www.commercebank.com/Assets/fonts/cerapro-medium-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'cera_proregular';
+    src: url("cerapro-regular-webfont.woff2") format("woff2"), url("https://www.commercebank.com/Assets/fonts/cerapro-regular-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'cera_proitalic';
+    src: url("cerapro-regularitalic-webfont.woff2") format("woff2"), url("https://www.commercebank.com/Assets/fonts/cerapro-regularitalic-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/*********************
+Text Options
+*********************/
+
+.white-text {
+    color: #ffffff;
+}
+
+.off-black-text {
+    color: #404040;
+    text-align: center;
+}
+
+.commerce-green-text {
+    color: #006747;
+}
+
+.lime-green-text {
+    color: #78BE20;
+}
+
+.blue-text {
+    color: #00b5e2;
+}
+
+.dark-gray-text {
+    color: #615C59;
+}
+
+.checked {
+    color: #4FA800;
+}
+
+/*********************
+Buttons
+*********************/
+
+/* Per Foye's email on 9/6/2019
+
+    The entire button CSS has been removed. 
+*/
+
+
+/* ---------------------------------------------------------
+   General Credit Card Components
+   ---------------------------------------------------------*/
+
+.cc-margin {
+    margin: 0 15px;
+}
+
+@media (max-width: 320px) {
+    .cc-margin {
+        margin: 0;
+    }
+}
+
+.cc-no-wrap {
+    white-space: no-wrap;
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* Updated 10/4/19 */
+/* Clear so 4th, 7th, 10th, 13th, etc. items float left in CC Card Display */
+@media (min-width: 1024px) {
+    .cc-clear > *:nth-child(3n+4) {
+        clear: left;
+    }
+}
+
+/* Updated 10/4/19 */
+/* Clear left, so 3rd, 5th, 7th, etc. items float left in CC Card Display */
+@media (min-width: 320px) and (max-width: 1023px) {
+    .cc-clear > *:nth-child(2n+1) {
+        clear: left;
+    }
+}
+
+
+/*********************
+General Credit Card Components 
+Credit Card Features Background
+*********************/
+
+.cc-background {
+    background: #f9f8f6;
+    -webkit-box-shadow: 0 0 5px 1px #3a3a3a;
+    -moz-box-shadow: 0 0 5px 1px #3a3a3a;
+    box-shadow: 0 0 5px 1px #e0e0e0;
+    border: 1px solid #f9f8f6;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+    display: block;
+    max-height: 415px;
+    height: 415px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+@media (max-width: 1024px) {
+    .cc-background {
+        max-height: 500px;
+        height: 500px;
+    }
+}
+
+@media (max-width: 812px) {
+    .cc-background {
+        max-height: 385px;
+        height: 385px;
+        margin-bottom: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .cc-background {
+        max-height: 370px;
+        height: 370px;
+        margin-bottom: 25px;
+    }
+}
+
+@media (max-width: 568px) {
+    .cc-background {
+        max-height: 375px;
+        height: 375px;
+        margin-bottom: 25px;
+    }
+}
+
+@media (max-width: 414px) {
+    .cc-background {
+        max-height: 415px;
+        height: 415px;
+        margin-bottom: 25px;
+    }
+}
+
+@media (max-width: 320px) {
+    .cc-background {
+        max-height: 450px;
+        height: 450px;
+        margin-bottom: 25px;
+    }
+}
+
+.cc-background a.btn,
+.cc-background a.btn:hover {
+    text-decoration: none;
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/********************* 
+Generic Credit Card Components
+for Side-by-Side Background Sections
+*********************/
+
+.cc-ad-unit-background__content,
+.cc-ad-unit-background__content_alt {
+    display: table-cell;
+    max-height: 400px;
+    height: 400px;
+    vertical-align: middle;
+}
+
+@media (max-width: 1024px) {
+    .cc-ad-unit-background__content,
+    .cc-ad-unit-background__content_alt {
+        display: table-cell;
+        max-height: 400px;
+        height: 400px;
+        vertical-align: middle;
+    }
+}
+
+@media (max-width: 812px) {
+    .cc-ad-unit-background__content,
+    .cc-ad-unit-background__content_alt {
+        display: table-cell;
+        max-height: 350px;
+        height: 350px;
+        vertical-align: middle;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .cc-ad-unit-background__content,
+    .cc-ad-unit-background__content_alt {
+        display: table: max-height: 375px;
+        height: 375px;
+        vertical-middle;
+    }
+}
+
+@media screen and (max-width: 568px) {
+    .cc-ad-unit-background__content,
+    .cc-ad-unit-background__content_alt {
+        display: table: max-height: 325px;
+        height: 325px;
+        vertical-middle;
+    }
+}
+
+.cc-ad-unit-background__content .btn {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    bottom: 2em;
+}
+
+.cc-ad-unit-green-background {
+    background: #77be1f;
+    display: table;
+    max-height: 400px;
+    height: 400px;
+    width: 100%;
+}
+
+.cc-ad-unit-blue-background {
+    background: #00b5e2;
+    display: table;
+    max-height: 400px;
+    height: 400px;
+    width: 100%;
+}
+
+@media (max-width: 1024px) {
+    .cc-ad-unit-green-background,
+    .cc-ad-unit-blue-background {
+        display: table;
+        max-height: 400px;
+        height: 400px;
+    }
+
+        .cc-ad-unit-green-background img,
+        .cc-ad-unit-blue-background img {
+            max-width: 90%;
+        }
+}
+
+@media (max-width: 812px) {
+    .cc-ad-unit-green-background {
+        display: table;
+        max-height: 400px;
+        height: 400px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 812px) {
+    .cc-ad-unit-blue-background {
+        display: table;
+        max-height: 350px;
+        height: 350px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .cc-ad-unit-green-background,
+    .cc-ad-unit-blue-background {
+        max-height: 375px;
+        height: 375px;
+        width: 60%;
+        margin: 0 auto 20px auto;
+    }
+}
+
+@media (max-width: 568px) {
+    .cc-ad-unit-green-background,
+    .cc-ad-unit-blue-background {
+        max-height: 325px;
+        height: 325px;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+.cc-ad-unit-no-background {
+    background: #f9f8f6 url("../imgs/ad-unit-circles-side-by-side.jpg");
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    display: table !important;
+    max-height: 400px !important;
+    height: 400px !important;
+    width: 100% !important;
+}
+
+.cc-ad-unit-background-no-text {
+    background: #f9f8f6 url("../imgs/ad-unit-side-by-side-background.jpg");
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    display: table !important;
+    max-height: 400px !important;
+    height: 400px !important;
+    width: 100% !important;
+}
+
+@media (max-width: 812px) {
+    .cc-ad-unit-no-background {
+        max-height: 400px;
+        height: 400px;
+        margin: 0 auto 20px auto;
+    }
+}
+
+@media (max-width: 812px) {
+    .cc-ad-unit-background-no-text {
+        max-height: 350px;
+        height: 350px;
+        margin: 0 auto 20px auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .cc-ad-unit-no-background {
+        max-height: 375px;
+        height: 375px;
+        width: 60%;
+        margin: 0 auto 20px auto;
+    }
+
+    .cc-ad-unit-background-no-text {
+        display: none;
+    }
+}
+
+@media (max-width: 568px) {
+    .cc-ad-unit-no-background {
+        max-height: 325px;
+        height: 325px;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+.cc-text-box {
+    max-height: 90px;
+    height: 90px;
+    padding: 0 7%;
+}
+
+@media (max-width: 768px) {
+    .cc-text-box {
+        max-height: 150px;
+        height: 150px;
+    }
+}
+
+.cc-padding-top {
+    padding: 0 20px 10px;
+    margin-top: -3em;
+}
+
+.cc-padding-all {
+    padding: 10px 20px;
+}
+
+@media (min-width: 768px) {
+    .cc-padding-ad {
+        padding: 0 20px;
+        margin-top: -3em;
+        margin-bottom: -20px;
+    }
+}
+
+@media (max-width: 767px) {
+    .cc-padding-ad {
+        padding: 0 20px;
+        margin-top: -2em;
+        margin-bottom: -10px;
+    }
+}
+
+.cc-padding {
+    padding-bottom: 5px;
+}
+
+@media (max-width: 768px) {
+    .cc-padding {
+        padding: 0;
+    }
+}
+
+/*********************
+Card Display
+*********************/
+
+.card-display {
+    width: 100%;
+    display: table;
+    margin: 0 auto;
+}
+
+    .card-display .faq-answer {
+        margin: 0 10px;
+    }
+
+    .card-display a {
+        text-decoration: none;
+    }
+
+        .card-display a:hover {
+            text-decoration: underline;
+        }
+
+img.card-display-image {
+    width: 90%;
+    height: auto;
+    margin: 15px auto;
+    text-align: center;
+    display: block;
+    transition: all 0.8s ease;
+}
+
+    img.card-display-image:first-child {
+        display: block;
+        margin: 15px 0;
+        text-align: left;
+    }
+
+@media (min-width: 768px) and (max-width: 1366px) {
+    img.card-display-image {
+        width: 90%;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        display: block;
+        transition: all 0.8s ease;
+    }
+
+        img.card-display-image:first-child {
+            display: block;
+            margin: 15px 0;
+        }
+}
+
+img:hover.card-display-image {
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.card-display__content {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 812px) {
+    .cc-hide {
+        display: none;
+    }
+}
+
+.card-display-title {
+    max-height: 70px;
+    height: 70px;
+}
+
+@media (min-width: 992px) and (max-width: 1250px) {
+    .card-display-title {
+        max-height: 100px;
+        height: 100px;
+    }
+}
+
+@media (min-width: 700px) and (max-width: 768px) {
+    .card-display-title {
+        max-height: 35px;
+        height: 35px;
+    }
+}
+
+
+@media (min-width: 667px) and (max-width: 699px) {
+    .card-display-title {
+        max-height: 45px;
+        height: 45px;
+    }
+}
+
+@media only screen and (width: 736px) {
+    .card-display-title {
+        max-height: 40px;
+        height: 40px;
+    }
+}
+
+@media (min-width: 567px) and (max-width: 666px) {
+    .card-display-title {
+        max-height: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 320px) {
+    .card-display-title {
+        max-height: 70px;
+        height: 70px;
+    }
+}
+
+.card-display-title h2,
+.card-display-title h3,
+.card-display-title h4,
+.card-display-title h5,
+.card-display-title h6 {
+    /*display: table-cell;
+		vertical-align: middle;*/
+    padding: 0;
+    margin: 0;
+}
+
+.card-display-title a, .card-display-title a:hover {
+    text-decoration: none;
+}
+
+.card-display-apply {
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+    .card-display-apply .row .col-sm-6:first-child span,
+    .card-display-apply .btn span {
+        display: inline-block;
+        margin: 4px 0.5em 0 0;
+    }
+
+    .card-display-apply .row .col-sm-6:first-child img,
+    .card-display-apply .btn img {
+        display: inline-block;
+        margin-top: -10px;
+    }
+
+    .card-display-apply a {
+        text-decoration: none;
+    }
+
+        .card-display-apply a:hover {
+            text-decoration: underline;
+        }
+
+.card-display-reviews {
+    text-align: center;
+    margin: 15px auto;
+}
+
+.card-display-features {
+    margin: 0;
+}
+
+    .card-display-features .btn,
+    .card-display-features .btn:hover {
+        min-width: 140px;
+        text-decoration: none;
+        margin: 0;
+    }
+
+@media (max-width: 1024px) {
+    .card-display-apply .row .col-sm-6 {
+        width: 100%;
+        text-align: center;
+        margin: 0 auto 15px auto;
+    }
+}
+
+@media (max-width: 812px) {
+    .card-display-features .btn,
+    .card-display-features .btn:hover {
+        margin: 0 auto;
+    }
+}
+
+
+.row .col-border .card-display-features {
+    border-right: 1px solid #CCCCCC;
+    padding-right: 10px;
+}
+
+@media (min-width: 812px) and (max-width: 1024px) {
+    .row .col-border .card-display-features {
+        padding-right: 30px;
+        border-right: 1px solid #CCCCCC;
+    }
+}
+
+@media (min-width: 1024px) {
+    .row .col-border:nth-child(3n+3) .card-display-features,
+    .row .col-border:last-child .card-display-features {
+        border-right: none;
+    }
+}
+
+@media (max-width: 990px) {
+    .row .col-border:nth-child(even) .card-display-features,
+    .row .col-border:last-child .card-display-features {
+        border-right: none;
+    }
+}
+
+@media (max-width: 568px) {
+    .row .col-border .card-display-features {
+        border-right: none;
+    }
+}
+
+.card-display-features ul li,
+.card-display-features ol li {
+    margin-left: -22px;
+}
+
+
+.card-display-description {
+    margin: 0px 10px 0 0; /* Updated on 2/4/2020 to accommodate stars | margin: 20px 10px 0 0; */
+    width: 95%;
+    max-height: 180px; /* Updated on 2/4/2020 to accommodate stars | max-height: 100px; */
+    height: 180px; /* Updated on 2/4/2020 to accommodate stars | height: 100px; */
+}
+
+/* Added on 2/4/2020 to accommodate stars */
+@media (min-width: 1025px) and (max-width: 1195px) {
+    .card-display-description {
+        max-height: 200px;
+        height: 200px;
+    }
+}
+
+/* Added on 2/4/2020 to accommodate stars */
+@media (min-width: 991px) and (max-width: 1024px) {
+    .card-display-description {
+        max-height: 230px;
+        height: 230px;
+    }
+}
+
+/* Added on 2/4/2020 to accommodate stars */
+@media (min-width: 671px) and (max-width: 991px) {
+    .card-display-description {
+        max-height: 165px;
+        height: 165px;
+    }
+}
+
+/* Added on 2/4/2020 to accommodate stars */
+@media (min-width: 481px) and (max-width: 520px) {
+    .card-display-description {
+        max-height: 230px;
+        height: 230px;
+    }
+}
+
+/* Added on 2/4/2020 to accommodate stars */
+@media (min-width: 460px) and (max-width: 480px) {
+    .card-display-description {
+        max-height: 250px;
+        height: 250px;
+    }
+}
+
+/* Added on 2/4/2020 to accommodate stars */
+@media (min-width: 360px) and (max-width: 459px) {
+    .card-display-description {
+        max-height: 280px;
+        height: 280px;
+    }
+}
+
+/* Added on 2/4/2020 to accommodate stars */
+@media (max-width: 359px) {
+    .card-display-description {
+        max-height: 325px;
+        height: 325px;
+    }
+}
+
+.card-display-bullets {
+    margin-bottom: 15px;
+    max-height: 100px; /* Added on 2/4/2020 */
+    height: 100px; /* Added on 2/4/2020 */
+}
+
+/* Added 10/4/19 */
+@media (min-width: 731px) and (max-width: 990px) {
+    .card-display-bullets {
+        max-height: 80px;
+        height: 80px;
+    }
+}
+
+/* Added 10/4/19 */
+@media (min-width: 498px) and (max-width: 730px) {
+    .card-display-bullets {
+        max-height: 80px;
+        height: 80px;
+    }
+}
+
+/* Updated & Edited 1024 to 497 10/4/19 */
+/* Updated & Edited on 2/4/2020 @media (min-width: 415px) and (max-width: 497px) */
+@media (min-width: 480px) and (max-width: 497px) {
+    .card-display-bullets {
+        max-height: 110px; /* Updated on 2/4/2020 | previously max-width: 135px | 160px; */
+        height: 110px; /* Updated on 2/4/2020 | previously height: 135px | 160px; */
+    }
+}
+
+/* Updated & Edited @media only to 375 10/4/19 */
+/* Updated & Edited from @media (min-width: 375px) and (max-width: 414px) on 2/4/2020 */
+@media (max-width: 479px) {
+    .card-display-bullets {
+        max-height: 180px; /* Updated on 2/4/2020 | max-height: 160px; */
+        height: 180px; /* Updated on 2/4/2020 | height: 160px; */
+    }
+}
+
+/* Added 10/4/19 */
+/* Removed on 2/4/2020 */
+/* @media only screen and (max-width: 374px) {
+    .card-display-bullets {
+        max-height: 220px;
+        height: 220px;
+    }
+} */
+
+/* Removed on 10/4/19 */
+/*
+@media (max-width: 812px) {
+    .card-display-icon {
+        height: 100px;
+        max-height: 100px;
+        display: block;
+        vertical-align: middle;
+    }
+}
+*/
+
+.card-display-icon {
+    height: 75px;
+    max-height: 75px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+@media (max-width: 1024px) {
+    .card-display-icon {
+        margin: 0 auto;
+        text-align: center;
+    }
+}
+
+
+.card-display-icon .btn {
+    text-align: center;
+    margin: 10px auto;
+}
+
+.credit-score-icon {
+    width: 38px;
+    height: 36px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.credit-score-text {
+    margin-top: 0;
+    display: inline-block;
+    vertical-align: top; /* Updated on 2/4/2020 | vertical-align: middle; */
+}
+
+@media (width: 1024px) {
+    .credit-score-text {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        padding-bottom: 20px;
+    }
+}
+
+@media (max-width: 414px) {
+    .credit-score-text {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        padding-bottom: 20px;
+        height: 80px; /* Updated on 2/4/2020 | height: 100px; */
+        max-height: 80px; /* Updated on 2/4/2020 | max-height: 100px; */
+    }
+}
+
+.credit-card-faq-group {
+    border-bottom: none;
+}
+
+.credit-card-drawer {
+    background: #4FA800;
+    padding: 7px 10px !important;
+    margin: 0 auto !important; /* Updated on 8/31/20 to fix issue for Sept release | margin: 20px auto 40px */
+}
+
+@media (max-width: 768px) {
+    .credit-card-drawer {
+        background: #4FA800;
+        display: block;
+        padding: 10px 0 !important;
+    }
+}
+
+.credit-card-drawer:link {
+    background: #4FA800;
+}
+
+.credit-card-drawer:hover {
+    background: #006747;
+}
+
+.credit-card-drawer:active {
+    background: #006747;
+}
+
+.credit-card-drawer .icon-btn-dropdown {
+    color: #ffffff !important;
+    position: static !important;
+}
+
+/* Added on 2/4/2020 */
+.credit-card-drawer span.icon-btn-dropdown {
+    margin-left: 5px;
+}
+
+.card-display .faq-drawer {
+    border-bottom: none !important;
+}
+
+.credit-card-faq {
+    border-bottom: none;
+}
+
+.credit-card-drawer h2,
+.credit-card-drawer h3,
+.credit-card-drawer h4 {
+    color: #ffffff !important;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0 !important;
+}
+
+a.credit-card-drawer,
+a:hover.credit-card-drawer {
+    text-decoration: none;
+}
+
+/*********************
+Ad Unit Edge to Edge
+*********************/
+
+.ad-unit-edge-to-edge {
+    background: url("../imgs/ad-unit-edge-to-edge.jpg") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 406px;
+    height: 406px;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+    .ad-unit-edge-to-edge {
+        padding-top: 45px;
+        margin-bottom: 30px;
+        min-height: 306px;
+        height: 306px;
+    }
+}
+
+@media (max-width: 375px) {
+    .ad-unit-edge-to-edge {
+        padding-top: 0;
+    }
+}
+
+.ad-unit-edge-to-edge > .faq-group > .row {
+    width: 100%;
+}
+
+.row .ad-unit-edge-to-edge-content {
+    margin-top: 3em;
+    width: 100%;
+    text-align: left;
+    padding: 5% 15%;
+}
+
+.row .ad-unit-edge-to-edge-content-left {
+    float: left;
+    padding: 5% 0 0 10%;
+    margin-top: 2em;
+    width: 40%;
+    text-align: left;
+    margin-bottom: 1em;
+}
+
+.row .ad-unit-edge-to-edge-content-right {
+    float: right;
+    padding: 5% 10% 0 0;
+    margin-top: 2em;
+    width: 40%;
+    text-align: left;
+    margin-bottom: 1em;
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .row .ad-unit-edge-to-edge-content,
+    .row .ad-unit-edge-to-edge-content-right,
+    .row .ad-unit-edge-to-edge-content-left {
+        width: 100%;
+        text-align: left;
+        padding: 10%;
+    }
+}
+
+@media (max-width: 768px) {
+    .row .ad-unit-edge-to-edge-content,
+    .row .ad-unit-edge-to-edge-content-right,
+    .row .ad-unit-edge-to-edge-content-left {
+        width: 100%;
+        text-align: left;
+        padding: 0 10% !important;
+    }
+}
+
+.row .ad-unit-edge-to-edge-content .btn,
+.row .ad-unit-edge-to-edge-content-right .btn,
+.row .ad-unit-edge-to-edge-content-left .btn {
+    margin-top: 2em;
+}
+
+@media (max-width: 768px) {
+    .row .ad-unit-edge-to-edge-content .btn,
+    .row .ad-unit-edge-to-edge-content-right .btn,
+    .row .ad-unit-edge-to-edge-content-left .btn {
+        margin-top: 1em;
+        min-width: 183px;
+    }
+}
+
+@media (min-width: 376px) and (max-width: 509px) {
+    .row .ad-unit-edge-to-edge-content .btn,
+    .row .ad-unit-edge-to-edge-content-right .btn,
+    .row .ad-unit-edge-to-edge-content-left .btn {
+        margin-top: 0.25em;
+    }
+}
+
+/*# sourceMappingURL=main.css.map */
+
+/* Custom Styles */
+/* Image Resizing*/
+@media (min-width: 415px) {
+    .desktopImage {
+        display: block;
+    }
+
+    .mobileImage {
+        display: none;
+    }
+}
+
+@media (max-width: 414px) {
+    .desktopImage {
+        display: none;
+    }
+
+    .mobileImage {
+        display: block;
+    }
+}
+
+/********************
+Ad Unit Side by Side
+********************/
+
+.ad-unit-side-by-side-title h2,
+.ad-unit-side-by-side-title h3,
+.ad-unit-side-by-side-title h4,
+.ad-unit-side-by-side-title h5,
+.ad-unit-side-by-side-title h6 {
+    margin: 0;
+    padding: 0;
+}
+
+/***************************
+Featured Tiles
+****************************/
+
+.featured-tiles {
+    width: 100%;
+    display: table;
+}
+
+@media (min-width: 1024px) and (max-width: 1365px) {
+    .featured-tiles {
+        max-width: 750px;
+        width: 750px;
+        display: table;
+    }
+}
+
+h3.featured-tiles {
+    margin-bottom: 25px;
+}
+
+.featured-background {
+    background: #f9f8f6;
+}
+
+.featured-tiles__content {
+    padding: 5px 20px;
+}
+
+@media (max-width: 375px) {
+    .featured-tiles__content {
+        padding: 0 15px;
+    }
+}
+
+.featured-tiles-title {
+    max-height: 50px;
+    height: 50px;
+}
+
+@media (min-width: 1024px) and (max-width: 1365px) {
+    .featured-tiles-title {
+        padding-left: 5px;
+        padding-right: 5px;
+        max-height: 75px;
+        height: 75px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 812px) {
+    .featured-tiles-title {
+        max-height: 55px;
+        height: 55px;
+    }
+}
+
+@media (max-width: 768px) {
+    .featured-tiles-title {
+        max-height: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 320px) {
+    .featured-tiles-title {
+        max-height: 45px;
+        height: 45px;
+    }
+}
+
+.featured-tiles section h3 {
+    margin-bottom: 25px;
+}
+
+.featured-tiles h2,
+.featured-tiles h3,
+.featured-tiles h4,
+.featured-tiles h5,
+.featured-tiles h6 {
+    /*display: table-cell;
+		vertical-align: middle;*/
+    padding: 0;
+}
+
+.featured-tiles-icon {
+    width: 90%;
+    height: auto;
+    margin: 5px auto 20px;
+    clear: both;
+}
