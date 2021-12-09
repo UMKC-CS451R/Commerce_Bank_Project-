@@ -1,202 +1,323 @@
+import pytz
 from flask import Flask,render_template,request,flash,session,redirect,url_for
 import mysql.connector
 import pandas as pd
-import datetime
-date=datetime.datetime.now()
+from pytz import timezone
+from datetime import datetime
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 db=mysql.connector.connect(user='root',port=3306,database="bank_transaction",charset="utf8")
 cur=db.cursor()
 app=Flask(__name__)
 app.config['SECRET_KEY']='@!@^&*&^*^$#$#&^%&$@%^$@$*(()&^%%'
-
-
-
-@app.route('/home')
-def home():
-    return render_template('home.html')
 @app.route('/')
 def index():
     return render_template('index.html')
-
-
-@app.route('/register',methods=['POST','GET'])
-def register():
+@app.route('/contact_us')
+def contact_us():
+    return render_template('contact-us.html')
+@app.route('/about_us')
+def about_us():
+    return render_template('about_us.html')
+@app.route('/reg')
+def reg():
+    return render_template('reg.html')
+@app.route('/regback',methods=['POST','GET'])
+def regback():
     if request.method=='POST':
-        username=request.form['UserName']
-        Email=request.form['Email']
-        password1=request.form['Password']
-        password2= request.form['Conpassword']
-        debitcard=request.form['DebitCard']
-        accno=request.form['AccNo']
-        IFSC=request.form['IFSC']
-        contact=request.form['ContactNo']
-        if password1 == password2:
-            sql="SELECT * from registration"
-            cur.execute(sql)
-            data=cur.fetchall()
-            db.commit()
-            x=[j for i in data for j in i]
-            if username in x and Email in x:
-                flash("User Name already exists",'alert')
-                return render_template('register.html')
-            else:
-                sql="INSERT INTO registration (UserName,Email,Password,DebitCard,AccNo,SWIFT,ContactNo) values(%s,%s,%s,%s,%s,%s,%s)"
-                val=(username,Email,password1,debitcard,accno,IFSC,contact)
-                cur.execute(sql,val)
-                db.commit()
-                msg="Registered successfuly you can login now"
-                return render_template('login.html',msg=msg)
+        c=request.form['cname']
+        e=request.form['email']
+        p=request.form['pwd']
+        a= request.form['accno']
+        b=request.form['balance']
+
+        sql="SELECT * from registration"
+        result = pd.read_sql_query(sql, db)
+        email1 = result['email'].values
+        print(email1)
+        if e in email1:
+            flash("email already existed", "warning")
+            return render_template('reg.html')
         else:
-            flash("Password not matching","Alert")
-            return render_template('register.html')
-    return render_template('register.html')
+            import random
+            sr = 'BANK'
+            n = random.randint(0, 1000)
+            s = sr + str(n)
+            print(s)
+            msg = 'Thanks for choosing online Banking.'
+            otp = "Costomer Id is: "
+            t = 'Regards,'
+            t1 = 'Online Bank Service.'
+            mail_content = msg + '\n' + otp + s +'.'+ '\n' + '\n' + t + '\n' + t1
+            sender_address = 'jayadeepmannengi@gmail.com'
+            sender_pass = 'dell12345'
+            receiver_address = e
+            message = MIMEMultipart()
+            message['From'] = sender_address
+            message['To'] = receiver_address
+            message['Subject'] = 'E- Commerce Bank'
 
+            message.attach(MIMEText(mail_content, 'plain'))
+            ses = smtplib.SMTP('smtp.gmail.com', 587)
+            ses.starttls()
+            ses.login(sender_address, sender_pass)
+            text = message.as_string()
+            ses.sendmail(sender_address, receiver_address, text)
+            ses.quit()
+            sql = "INSERT INTO registration (custId,cname,email,Password,accno,balance) values(%s,%s,%s,%s,%s,%s)"
+            val = (s,c, e, p, a, b)
+            cur.execute(sql, val)
+            db.commit()
+            flash("Successfully account created and Customer ID sent to your mail please check it.", "success")
+            return render_template('index.html')
+    return render_template('reg.html')
 
-
-@app.route('/login',methods=['POST','GET'])
+@app.route('/custhome')
+def custhome():
+    return render_template('custhome.html')
+@app.route('/login',methods=['POST', 'GET'])
 def login():
-    if request.method=='POST':
-        name=request.form['username']
-        session['name']=name
-        password=request.form['password']
-        session['pass']=password
-        try:
-            sql = "select UserName,Password,AccNo,Balance from registration WHERE UserName='%s' and Password='%s'" % (name, password)
-            cur.execute(sql)
-            data = cur.fetchall()
-            db.commit()
-            i = [j for i in data for j in i]
+    if request.method == "POST":
 
-            if i==[]:
-                flash("Account Doesn't Exists", "success")
-                return render_template('login.html')
-            sql = "select * from registration WHERE UserName='%s' and Password='%s'" % (name, password)
-            cur.execute(sql)
-            data = cur.fetchone()
-            db.commit()
-            session['accno']=data[-4]
-            session['balance']=data[-1]
-            flash("Now Make Your Transactions", "msg")
-            return render_template("log.html", name=data[1], Balance=data[-1], AccNo=data[-4])
-        except:
-            return render_template('login.html')
-    return render_template('login.html')
+        email = request.form['email']
+        c = request.form['custId']
+        password1 = request.form['pwd']
 
-
-
-@app.route('/deposit',methods=['POST','GET'])
-def deposit():
-    if request.method == 'POST':
-        Fromaccount = request.form['Fromaccount']
-        toaccount = request.form['toaccount']
-        Amount = int(request.form['Amount'])
-        Description = request.form['Description']
-        Bankname=request.form['BankName']
-        Swiftcode=request.form['Swiftcode']
-        da=date.strftime("%x")
-        dt = date.strftime("%I:%M %p")
-        print(dt)
-
-        sql="select * from registration where AccNo=%s"%(Fromaccount)
-        cur.execute(sql)
-        info=cur.fetchall()
-        db.commit()
-        bal=[j for b in info for j in b]
-
-        total=bal[-1]
-
-        total = int(total) - Amount
-        session['balance'] = total
-        sql="select * from registration where AccNo=%s"%(toaccount)
-        cur.execute(sql)
-        d=cur.fetchall()
-        db.commit()
-
-        x=[j for i in d for j in i]
+        sql = "select * from registration where custId='%s' and email='%s' and password='%s' " % (c, email, password1)
+        x = cur.execute(sql)
         print(x)
-        if d==[]:
-            flash('Receiver Account is not valid',"success")
-            return redirect(url_for('deposit'))
+        results = cur.fetchall()
+        print(results)
+        # name=results[0][2]
+        custId = results[0][1]
+        session['email'] = email
+        # session['name'] = name
+        if(custId==c):
+            if len(results) > 0:
+                flash("Welcome ", "primary")
+                sq="select cname,accno,balance from registration where email='%s' and custId='%s' "%(email,c)
+                x = pd.read_sql_query(sq, db)
+                cname=x.values[0][0]
+                accno=x.values[0][1]
+                balance=int(x.values[0][2])
+                session['accno']=accno
+                session['balance']=balance
+                return render_template('custhome.html', msg=results[0][2],c=cname,a=accno,b=balance)
 
-        a=int(x[-1]) + Amount
-        y=int(x[-1])
-        aaa=Amount
-        t='Credit'
-        # sql="insert into tablename1(Date,Time,TotalBalance,TransactionType,Amount,Description,ReceiverAccount) values(%s,%s,%s,%s,%s,%s,%s)"
-        # val=(da,dt,total,t,Amount,Description,toaccount)
-        # cur.execute(sql, val)
-        # db.commit()
-
-        sql="insert into transactions1(AccountNo,Date,Time,TotalBalance,TransactionType,Amount,Description,ReceiverAccount,SenderAccount,BankName,SwiftCode) values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
-        val=(toaccount,da,dt,a,t,aaa,Description,toaccount,Fromaccount,Bankname,Swiftcode)
-        cur.execute(sql,val)
-        db.commit()
-        type = "Debit"
-        sql="update registration set Balance=%s  where Balance=%s and AccNo=%s "%(a,y,toaccount)
-        cur.execute(sql)
-        db.commit()
-
-        if Amount > int(bal[-1]):
-            flash("no such Amount to make transactions", "alert")
-            return render_template("log.html",name=bal[1], Balance=bal[-1], AccNo=bal[-4])
+            else:
+                flash("Login failed", "warning")
+                return render_template('tender.html')
         else:
+            flash("CustomerID value mismatches please try again", "danger")
+            return render_template('index.html')
 
-            act_bal=int(bal[-1]) - Amount
-            sql = "update registration set Balance=%s where Balance=%s and AccNo=%s " % (act_bal,bal[-1], Fromaccount)
-            cur.execute(sql)
+    return render_template('index.html')
+
+@app.route('/trans')
+def trans():
+    return render_template('trans.html')
+
+@app.route('/transback',methods=['POST','GET'])
+def transback():
+    if request.method == 'POST':
+        rname = request.form['rname']
+        toaccount = request.form['accno']
+        conaccno = int(request.form['conaccno'])
+        swift = request.form['swift']
+        ctg=request.form['ctg']
+        amount=request.form['amount']
+        a=int(amount)
+        ac=int(toaccount)
+        co=int(conaccno)
+        remail=request.form['remail']
+        transtype=request.form['transtype']
+        # date = datetime.datetime.now()
+        # da=date.strftime("%x")
+        # dt = date.strftime("%I:%M %p")
+        # print(dt)
+        accno=session.get('accno')
+        bal=session.get('balance')
+        email=session.get('email')
+        # CST=pytz.timezone('US/Central')
+        ind_time1 = datetime.now(timezone('US/Central')).strftime('%m-%d-%Y %I:%M %p')
+        ind_time2 = datetime.now(timezone('US/Central')).strftime('%H:%M:%S')
+        ind_time = datetime.now(timezone('US/Central')).strftime('%H:%S %p')
+        print(ind_time1)
+        print(ind_time2)
+        print(type(ind_time2))
+        in_min = int(ind_time2.split(':')[0]) * 60
+        in_min = in_min + int(ind_time2.split(':')[1])
+        print(in_min)
+        s = "select count(*),balance from registration where email='%s'" % (remail)
+        x = pd.read_sql_query(s, db)
+        count = x.values[0][0]
+        b = int(x.values[0][0])
+        s1 = "select balance from registration where email='%s'" % (email)
+        x1 = pd.read_sql_query(s1, db)
+        # count = x.values[0][0]
+        c = int(x1.values[0][0])
+        t2 = b + a
+        # if 359 < in_min:
+        if c < a:
+            flash("Unefficient Balance","danger")
+            return render_template("trans.html")
+        if ac == co:
+            if count==1:
+                sql="insert into transactions(saccno,semail,rname,remail,raccno,ctg,transtype,swift,amount,date1,time1) values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
+                val=(accno,email,rname,remail,toaccount,ctg,transtype,swift,a,ind_time1,ind_time)
+                cur.execute(sql, val)
+                db.commit()
+                msg = 'Thanks for choosing online Banking.'
+                # otp = "You have made a transaction of"
+                # opt1="Your Transaction in  "
+                t = 'Regards,'
+                t1 = 'Online Bank Service.'
+                mail_content = msg + '\n' +'$.'+amount+' is debited from A/c '+ accno + ' for '+ ctg + ' on ' + ind_time1 +' . '+'\n' + '\n' + t + '\n' + t1
+                sender_address = 'jayadeepmannengi@gmail.com'
+                sender_pass = 'dell12345'
+                receiver_address = email
+                message = MIMEMultipart()
+                message['From'] = sender_address
+                message['To'] = receiver_address
+                message['Subject'] = 'Commerce Bank'
+                message.attach(MIMEText(mail_content, 'plain'))
+                ses = smtplib.SMTP('smtp.gmail.com', 587)
+                ses.starttls()
+                ses.login(sender_address, sender_pass)
+                text = message.as_string()
+                ses.sendmail(sender_address, receiver_address, text)
+                ses.quit()
+
+                total=bal-a;
+                sq="update registration set balance='%s' where email='%s'"%(total,email)
+                cur.execute(sq)
+                db.commit()
+
+                sq1 = "update registration set balance='%s' where email='%s'" % (t2, remail)
+                cur.execute(sq1, db)
+                db.commit()
+                msg = 'You have received '
+                otp = "Credited by "
+                t = 'Regards,'
+                t1 = 'Online Bank Service.'
+                mail_content = msg +amount+' $ .'+otp+ accno +' on ' + ind_time1 + '.' + '\n' + '\n' + t + '\n' + t1
+                sender_address = 'jayadeepmannengi@gmail.com'
+                sender_pass = 'dell12345'
+                receiver_address = remail
+                message = MIMEMultipart()
+                message['From'] = sender_address
+                message['To'] = receiver_address
+                message['Subject'] = 'Commerce Bank'
+                message.attach(MIMEText(mail_content, 'plain'))
+                ses = smtplib.SMTP('smtp.gmail.com', 587)
+                ses.starttls()
+                ses.login(sender_address, sender_pass)
+                text = message.as_string()
+                ses.sendmail(sender_address, receiver_address, text)
+                ses.quit()
+                flash("Transaction completed","success")
+                return render_template("trans.html")
+            else:
+                flash("Account holder Email not found","info")
+                return render_template("trans.html")
+        else:
+            flash("Account Number not found", "info")
+            return render_template("trans.html")
+        # else:
+        #     msg = 'Thanks for choosing online Banking.'
+        #     otp = "Please make a transaction on early hours i.e., During Bank working hours."
+        #
+        #     t = 'Regards,'
+        #     t1 = 'Online Bank Service.'
+        #     mail_content = msg + '\n' + otp + '\n' + '\n' + t + '\n' + t1
+        #     sender_address = 'cse.takeoff@gmail.com'
+        #     sender_pass = 'Takeoff@123'
+        #     receiver_address = email
+        #     message = MIMEMultipart()
+        #     message['From'] = sender_address
+        #     message['To'] = receiver_address
+        #     message['Subject'] = 'E- Commerce Bank'
+        #
+        #     message.attach(MIMEText(mail_content, 'plain'))
+        #     ses = smtplib.SMTP('smtp.gmail.com', 587)
+        #     ses.starttls()
+        #     ses.login(sender_address, sender_pass)
+        #     text = message.as_string()
+        #     ses.sendmail(sender_address, receiver_address, text)
+        #     ses.quit()
+        #     flash("")
+
+    return render_template('trans.html')
+@app.route('/history')
+def history():
+    email=session.get('email')
+    sql="select * from transactions where semail='%s' ORDER BY date1 ASC "%(email)
+    x=pd.read_sql_query(sql,db)
+    x=x.drop(['id','saccno','semail','remail','swift','time1'], axis=1)
+    return render_template('history.html',row_val=x.values.tolist())
+@app.route('/forget')
+def forget():
+    return render_template('forget.html')
+
+@app.route('/forgetback',methods=['POST', 'GET'])
+def forgetback():
+    if request.method == "POST":
+
+        email = request.form['email']
+        cpwd = request.form['cpwd']
+        pwd = request.form['pwd']
+        if pwd == cpwd:
+            sq1 = "update registration set password='%s' where email='%s'" % (pwd, email)
+            cur.execute(sq1, db)
             db.commit()
+            msg = 'Your Email Id password is successfully changed. Now you can login. '
+            t = 'Regards,'
+            t1 = 'Online Bank Service.'
+            mail_content = msg  + '\n' + '\n' + t + '\n' + t1
+            sender_address = 'jayadeepmannengi@gmail.com'
+            sender_pass = 'dell12345'
+            receiver_address = email
+            message = MIMEMultipart()
+            message['From'] = sender_address
+            message['To'] = receiver_address
+            message['Subject'] = 'Commerce Bank'
+            message.attach(MIMEText(mail_content, 'plain'))
+            ses = smtplib.SMTP('smtp.gmail.com', 587)
+            ses.starttls()
+            ses.login(sender_address, sender_pass)
+            text = message.as_string()
+            ses.sendmail(sender_address, receiver_address, text)
+            ses.quit()
+            flash("Sucessfully password reset ", "success")
+            return render_template("forget.html")
+        else:
+            flash("Password and Confirm password mismatches so please try again ", "success")
+            return render_template("forget.html")
 
+    return render_template('forget.html')
 
-            sql="insert into transactions1 (AccountNo,Date,Time,TotalBalance,TransactionType,Amount,Description,ReceiverAccount,SenderAccount) values(%s,%s,%s,%s,%s,%s,%s,%s,%s)"
-            val=(Fromaccount,da,dt,act_bal,type,Amount,Description,toaccount,Fromaccount)
-            cur.execute(sql,val)
-            db.commit()
-
-            sql="select Date,Time,TotalBalance,TransactionType,Amount,Description,ReceiverAccount from transactions1 where AccountNo='%s'"%(Fromaccount)
-            data=pd.read_sql_query(sql,db)
-            db.commit()
-
-            sql="select Balance from registration where AccNo='%s'"%(Fromaccount)
-            cur.execute(sql)
-            val=cur.fetchone()
-            db.commit()
-            c=val[0]
-            return render_template('log.html',AccNo=Fromaccount,name=session['name'],Balance=c,cols=data.columns,rows=data.values.tolist())
-    return render_template('dform.html',a=session['accno'])
-
-
-@app.route('/transaction')
-def transaction():
-    sql = "select Date,Time,TotalBalance,TransactionType,Amount,Description,SenderAccount,ReceiverAccount from transactions1 where AccountNo='%s'" % (session['accno'])
-
-
-
-
-    # Temparary_df=df
-    # df=Temparary_df.drop(['SenderAccount'],axis=1)
-    # df=Temporary_df.drop(['ReceiverAccount'],axis=1)
-
-    # sql="update transactions1 set TransactionType='credit' where TransactionType='None' and AccountNo=%s"%(session['accno'])
-    # cur.execute(sql)
-    # db.commit()
-
-    df = pd.read_sql_query(sql, db)
-    # debit = df[df['TransactionType']== 'Debit']
-    #
-    # debit = debit.drop(['SenderAccount'],axis =1)
-    # print(debit)
-    # credit = df[df['TransactionType'] == 'Credit']
-    # credit = credit.drop(['ReceiverAccount'],axis =1)
-    # print(credit)
-    df=df.drop(['ReceiverAccount'],axis=1)
-    db.commit()
-
-    return render_template('transaction.html',cols=df.columns,rows=df.values.tolist())
-
-@app.route('/logout')
-def logout():
-    session.pop('name',None)
-    return redirect(url_for('home'))
-
+@app.route('/down')
+def down():
+    email=session.get('email')
+    sql="select rname,raccno,ctg,transtype,amount,date1 from transactions where semail='%s' ORDER BY date1 ASC "%(email)
+    x=pd.read_sql_query(sql,db)
+    # x=x.drop(['id','saccno','semail','remail','swift','time1'], axis=1)
+    # data=x.to_csv('CSV_Files/Data.csv')
+    # data = pd.read_csv('CSV_Files/Data.csv')
+    # # print(data)
+    # data['Reciever Name'] = data.rname
+    # data['Reciever Accno'] = data.raccno
+    # data['Category'] = data.ctg
+    # data['Transaction Type'] = data.transtype
+    # data['Amount'] = data.amount
+    # data['Date & Time'] = data.date1
+    # data.drop(['Unnamed: 0','rname','raccno','ctg','transtype','amount','date1'],axis = 1,inplace = True)
+    # print(data.columns)
+    data=x.to_csv()
+    print(data)
+    # return render_template('down.html',cal_name=data.columns.values, row_val=data.values.tolist())
+    return render_template('down.html',msg=data)
 
 if __name__=='__main__':
     app.run(debug=True)
